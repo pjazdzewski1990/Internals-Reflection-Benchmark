@@ -3,6 +3,7 @@ package pl.ug.reflect.benchmark.fields.publik;
 import java.lang.reflect.Field;
 
 import pl.ug.reflect.benchmark.ReflectMethodBenchmark;
+import pl.ug.reflect.benchmark.data.IReflectClass;
 import pl.ug.reflect.benchmark.data.ReflectClass;
 
 public class ReflectSetPublicSimpleBenchmark extends ReflectMethodBenchmark {
@@ -23,8 +24,8 @@ public class ReflectSetPublicSimpleBenchmark extends ReflectMethodBenchmark {
 	}
 
 	@Override
-	protected long testWithInterface(ReflectClass testData) {
-		return -100;
+	protected long testWithInterface(IReflectClass testData) {
+		return -1;
 	}
 
 }

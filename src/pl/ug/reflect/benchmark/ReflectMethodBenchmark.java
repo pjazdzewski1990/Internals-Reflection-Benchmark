@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
+import pl.ug.reflect.benchmark.data.IReflectClass;
 import pl.ug.reflect.benchmark.data.ReflectClass;
 
 public class ReflectMethodBenchmark implements IMeasurable {
@@ -46,10 +47,9 @@ public class ReflectMethodBenchmark implements IMeasurable {
 		logText("Method call");
 		logText("Java" + SEPARATOR + "Reflection" + SEPARATOR + "Interface" + LINE_END);
 		for(int i=0; i<BenchmarkConstants.ROUNDS_COUNT; i++){
-			ReflectClass testData = new ReflectClass();
-			long timeWithJava = testWithJava(testData);
-			long timeWithReflection = testWithReflection(testData);
-			long timeWithInterface = testWithInterface(testData);
+			long timeWithJava = testWithJava(new ReflectClass());
+			long timeWithReflection = testWithReflection(new ReflectClass());
+			long timeWithInterface = testWithInterface(new ReflectClass());
 			
 			if(i != 0) saveResults(new long[]{timeWithJava, timeWithReflection, timeWithInterface});
 		}
@@ -68,8 +68,10 @@ public class ReflectMethodBenchmark implements IMeasurable {
 		return System.nanoTime() - startTime;
 	}
 
-	protected long testWithInterface(ReflectClass testData) {
-		return -1;
+	protected long testWithInterface(IReflectClass testData) {
+		long startTime = System.nanoTime();
+		testData.call(2);
+		return System.nanoTime() - startTime;
 	}
 
 	private void saveResults(long[] resultList) {

@@ -3,6 +3,7 @@ package pl.ug.reflect.benchmark.data.priwate;
 import java.lang.reflect.Method;
 
 import pl.ug.reflect.benchmark.ReflectMethodBenchmark;
+import pl.ug.reflect.benchmark.data.IReflectClass;
 import pl.ug.reflect.benchmark.data.ReflectClass;
 
 public class ReflectGetPrivateComplexBenchmark extends ReflectMethodBenchmark {
@@ -23,8 +24,10 @@ public class ReflectGetPrivateComplexBenchmark extends ReflectMethodBenchmark {
 	}
 
 	@Override
-	protected long testWithInterface(ReflectClass testData) {
-		return -100;
+	protected long testWithInterface(IReflectClass testData) {
+		long startTime = System.nanoTime();
+		Object foo = testData.getPrivateComplex();
+		return System.nanoTime() - startTime;
 	}
 
 }

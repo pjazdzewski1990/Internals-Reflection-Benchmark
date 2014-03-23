@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.ug.reflect.benchmark.ReflectMethodBenchmark;
+import pl.ug.reflect.benchmark.data.IReflectClass;
 import pl.ug.reflect.benchmark.data.ReflectClass;
 
 public class ReflectSetPrivateComplexBenchmark extends ReflectMethodBenchmark {
@@ -25,8 +26,10 @@ public class ReflectSetPrivateComplexBenchmark extends ReflectMethodBenchmark {
 	}
 	
 	@Override
-	protected long testWithInterface(ReflectClass testData) {
-		return -42;
+	protected long testWithInterface(IReflectClass testData) {
+		long startTime = System.nanoTime();
+		testData.setPrivateComplex(new ArrayList<Integer>());
+		return System.nanoTime() - startTime;
 	}
 
 }

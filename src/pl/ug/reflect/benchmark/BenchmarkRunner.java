@@ -31,6 +31,7 @@ public class BenchmarkRunner {
 			test.measure();
 			test.dumpData();
 		}
+		
 		System.out.println("End");
 	}
 }

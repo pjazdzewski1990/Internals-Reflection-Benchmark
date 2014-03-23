@@ -4,6 +4,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import pl.ug.reflect.benchmark.ReflectMethodBenchmark;
+import pl.ug.reflect.benchmark.data.IReflectClass;
 import pl.ug.reflect.benchmark.data.ReflectClass;
 
 public class ReflectSetPublicComplexBenchmark extends ReflectMethodBenchmark {
@@ -24,8 +25,8 @@ public class ReflectSetPublicComplexBenchmark extends ReflectMethodBenchmark {
 	}
 
 	@Override
-	protected long testWithInterface(ReflectClass testData) {
-		return -100;
+	protected long testWithInterface(IReflectClass testData) {
+		return -1;
 	}
 
 }
