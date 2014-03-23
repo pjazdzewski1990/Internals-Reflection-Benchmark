@@ -1,4 +1,4 @@
-package pl.ug.reflect.benchmark.fields;
+package pl.ug.reflect.benchmark.fields.publik;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

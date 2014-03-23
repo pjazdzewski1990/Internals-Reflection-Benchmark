@@ -51,7 +51,7 @@ public class ReflectMethodBenchmark implements IMeasurable {
 			long timeWithReflection = testWithReflection(testData);
 			long timeWithInterface = testWithInterface(testData);
 			
-			saveResults(new long[]{timeWithJava, timeWithReflection, timeWithInterface});
+			if(i != 0) saveResults(new long[]{timeWithJava, timeWithReflection, timeWithInterface});
 		}
 	}
 
