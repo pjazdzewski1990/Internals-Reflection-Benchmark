@@ -1,5 +1,9 @@
 package pl.ug.reflect.benchmark;
 
+import pl.ug.reflect.benchmark.data.priwate.ReflectGetPrivateComplexBenchmark;
+import pl.ug.reflect.benchmark.data.priwate.ReflectGetPrivateSimpleBenchmark;
+import pl.ug.reflect.benchmark.data.priwate.ReflectSetPrivateComplexBenchmark;
+import pl.ug.reflect.benchmark.data.priwate.ReflectSetPrivateSimpleBenchmark;
 import pl.ug.reflect.benchmark.fields.publik.ReflectGetPublicComplexBenchmark;
 import pl.ug.reflect.benchmark.fields.publik.ReflectGetPublicSimpleBenchmark;
 import pl.ug.reflect.benchmark.fields.publik.ReflectSetPublicComplexBenchmark;
@@ -16,6 +20,10 @@ public class BenchmarkRunner {
 			new ReflectGetPublicComplexBenchmark(),
 			new ReflectSetPublicComplexBenchmark(),
 			//measure private access
+			new ReflectGetPrivateSimpleBenchmark(),
+			new ReflectSetPrivateSimpleBenchmark(),
+			new ReflectGetPrivateComplexBenchmark(),
+			new ReflectSetPrivateComplexBenchmark()
 		}; 
 		
 		for(IMeasurable test : allTests){

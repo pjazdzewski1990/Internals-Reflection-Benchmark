@@ -5,19 +5,19 @@ import java.lang.reflect.Method;
 import pl.ug.reflect.benchmark.ReflectMethodBenchmark;
 import pl.ug.reflect.benchmark.data.ReflectClass;
 
-public class ReflectGetPrivateSimpleBenchmark extends ReflectMethodBenchmark {
+public class ReflectGetPrivateComplexBenchmark extends ReflectMethodBenchmark {
 
 	@Override
 	protected long testWithJava(ReflectClass testData) {
 		long startTime = System.nanoTime();
-		Object foo = testData.getPrivateSimple();
+		Object foo = testData.getPrivateComplex();
 		return System.nanoTime() - startTime;
 	}
 
 	@Override
 	protected long testWithReflection(ReflectClass testData) throws Exception {
 		long startTime = System.nanoTime();
-		Method method = ReflectClass.class.getMethod("getPrivateSimple", null);
+		Method method = ReflectClass.class.getMethod("getPrivateComplex", null);
 		Object returnValue = method.invoke(testData, new Object[0]);
 		return System.nanoTime() - startTime;
 	}

@@ -18,7 +18,7 @@ public class ReflectMethodBenchmark implements IMeasurable {
 	
 	protected final String SEPARATOR = ",";
 	protected final String LINE_END = "\n";
-
+	
 	public ReflectMethodBenchmark(){
 		csvData = new StringBuilder();
 		logText(benchmarkName);
@@ -83,7 +83,7 @@ public class ReflectMethodBenchmark implements IMeasurable {
 	@Override
 	public void dumpData() {
 		try {
-			PrintWriter writer = new PrintWriter(dataDumpFilename, "UTF-8");
+			PrintWriter writer = new PrintWriter("doc/" + dataDumpFilename, "UTF-8");
 			writer.println(csvData.toString());
 			writer.close();
 		} catch (FileNotFoundException e) {

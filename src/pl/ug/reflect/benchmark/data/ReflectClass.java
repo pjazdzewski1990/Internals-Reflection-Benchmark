@@ -20,7 +20,7 @@ public class ReflectClass {
 	public int getPrivateSimple() {
 		return privateSimple;
 	}
-	public void setPrivateSimple(int privateSimeple) {
+	public void setPrivateSimple(Integer privateSimeple) {
 		this.privateSimple = privateSimeple;
 	}
 	
